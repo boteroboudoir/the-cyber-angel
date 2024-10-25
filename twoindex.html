@@ -3,100 +3,83 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Botero Boudoir</title>
+    <title>the cyber angel</title>
     <style>
         body {
-            background-color: #0f0f1f; /* Dark background for the portal effect */
-            color: white;
-            font-family: 'Playfair Display', serif;
-            text-align: center;
             margin: 0;
-            padding: 0;
+            height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
+            background-color: black;
+            color: lightblue;
+            font-family: 'DejaVu Sans Mono', monospace;
             overflow: hidden;
         }
 
-        .text-container {
-            width: 100%;
-            max-width: 100%;
-            white-space: nowrap;
-            overflow: hidden;
+        .portal {
+            font-size: 3em;
             text-align: center;
-        }
-
-        .now-entering-text {
-            font-size: 3em; /* Slightly larger text for emphasis */
-            white-space: nowrap;
-            border-right: 2px solid white; /* Simulating a blinking cursor */
-            width: 0; /* Initially hidden */
-            animation: typing 8s steps(40, end), blink-caret 0.75s step-end infinite; /* Slower typing */
-            text-shadow: 0 0 5px #00ffff, 0 0 10px #00ffff, 0 0 20px #00ffff; /* Neon glow effect */
-        }
-
-        @keyframes typing {
-            from { width: 0; }
-            to { width: 100%; }
-        }
-
-        @keyframes blink-caret {
-            from, to { border-color: transparent; }
-            50% { border-color: white; }
-        }
-    </style>
-</head>
-<body>
-    <div class="text-container">
-        <div class="now-entering-text">
-            Now entering portal...
-        </div>
-    </div>
-</body>
-</html>
-
-        #socials {
-            display: none;
-            text-align: center;
-            margin-top: 20px;
-            font-size: 1.5em;
             opacity: 0;
+            animation: fadeIn 3s forwards, fadeOut 1s forwards 5s;
         }
 
         @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
+            to {
+                opacity: 1;
+            }
         }
 
-        .fade-in {
-            display: block;
-            animation: fadeIn 2s forwards;
+        @keyframes fadeOut {
+            to {
+                opacity: 0;
+            }
         }
 
-        .social-item {
-            margin: 10px 0;
+        .socials {
+            display: none;
+            text-align: center;
+            font-size: 1.5em;
+            margin-top: 20px;
+            animation: fadeIn 2s forwards 6s;
+        }
+
+        .glow {
+            text-shadow: 0 0 20px lightblue, 0 0 30px lightblue;
         }
     </style>
 </head>
 <body>
-
-    <div id="portal-text">Now Entering Portal...</div>
-
-    <div id="socials">
-        <div class="social-item">X: @thecyberangel</div>
-        <div class="social-item">Instagram: @thecyberangeloftheinternet</div>
-        <div class="social-item">Discord: @thecyberangeloftheinternet</div>
-        <div class="social-item">Email: thecyberangeloftheinternet@outlook.com</div>
-        <div class="social-item">SMS: 717-324-2315</div>
+    <div class="portal glow" id="portalText"></div>
+    <div class="socials" id="socialsList">
+        <p> s o c i a l s .<p> 
+        <p>Email: thecyberangeloftheinternet@outlook.com</p>
+        <p>SMS: 717-324-2315</p>
+        <p>X: @thecyberangel</p>
+        <p>Instagram: @thecyberangeloftheinternet</p>
+        <p>Discord: @thecyberangeloftheinternet</p>
     </div>
 
     <script>
-        // Wait for the typing animation to finish before displaying the socials
-        setTimeout(() => {
-            document.getElementById('socials').classList.add('fade-in');
-        }, 4000); // Adjust to match the typing animation duration
-    </script>
+        const portalText = "now entering...";
+        let index = 0;
 
+        function typeText() {
+            if (index < portalText.length) {
+                document.getElementById("portalText").textContent += portalText.charAt(index);
+                index++;
+                setTimeout(typeText, 150); // Adjust this value for speed
+            } else {
+                setTimeout(showSocials, 500); // Delay before showing socials
+            }
+        }
+
+        function showSocials() {
+            document.getElementById("portalText").style.display = 'none';
+            document.getElementById("socialsList").style.display = 'block';
+        }
+
+        window.onload = typeText;
+    </script>
 </body>
 </html>
