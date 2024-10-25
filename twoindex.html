@@ -3,38 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Cyber Angel's Portal</title>
+    <title>Botero Boudoir</title>
     <style>
         body {
-            background-color: black;
-            color: rgb(118, 207, 255);
-            font-family: "DejaVu Sans Mono", monospace;
+            background-color: #0f0f1f; /* Dark background for the portal effect */
+            color: white;
+            font-family: 'Playfair Display', serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
             overflow: hidden;
-            margin: 0;
         }
 
-        #portal-text {
-            font-size: 2em;
-            letter-spacing: 0.15em;
+        .text-container {
+            width: 100%;
+            max-width: 100%;
             white-space: nowrap;
             overflow: hidden;
-            border-right: 2px solid rgb(118, 207, 255);
-            width: 0;
-            animation: typing 4s steps(30, end) forwards, blink 0.75s step-end infinite;
+            text-align: center;
+        }
+
+        .now-entering-text {
+            font-size: 3em; /* Slightly larger text for emphasis */
+            white-space: nowrap;
+            border-right: 2px solid white; /* Simulating a blinking cursor */
+            width: 0; /* Initially hidden */
+            animation: typing 8s steps(40, end), blink-caret 0.75s step-end infinite; /* Slower typing */
+            text-shadow: 0 0 5px #00ffff, 0 0 10px #00ffff, 0 0 20px #00ffff; /* Neon glow effect */
         }
 
         @keyframes typing {
             from { width: 0; }
-            to { width: 18ch; } /* Adjust based on the length of the text */
+            to { width: 100%; }
         }
 
-        @keyframes blink {
-            50% { border-color: transparent; }
+        @keyframes blink-caret {
+            from, to { border-color: transparent; }
+            50% { border-color: white; }
         }
+    </style>
+</head>
+<body>
+    <div class="text-container">
+        <div class="now-entering-text">
+            Now entering portal...
+        </div>
+    </div>
+</body>
+</html>
 
         #socials {
             display: none;
