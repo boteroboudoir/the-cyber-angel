@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Cyber Angel's Portal</title>
+    <style>
+        body {
+            background-color: black;
+            color: rgb(118, 207, 255);
+            font-family: "DejaVu Sans Mono", monospace;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+            margin: 0;
+        }
+
+        #portal-text {
+            font-size: 2em;
+            letter-spacing: 0.15em;
+            white-space: nowrap;
+            overflow: hidden;
+            border-right: 2px solid rgb(118, 207, 255);
+            width: 0;
+            animation: typing 4s steps(30, end) forwards, blink 0.75s step-end infinite;
+        }
+
+        @keyframes typing {
+            from { width: 0; }
+            to { width: 18ch; } /* Adjust based on the length of the text */
+        }
+
+        @keyframes blink {
+            50% { border-color: transparent; }
+        }
+
+        #socials {
+            display: none;
+            text-align: center;
+            margin-top: 20px;
+            font-size: 1.5em;
+            opacity: 0;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .fade-in {
+            display: block;
+            animation: fadeIn 2s forwards;
+        }
+
+        .social-item {
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="portal-text">Now Entering Portal...</div>
+
+    <div id="socials">
+        <div class="social-item">X: @thecyberangel</div>
+        <div class="social-item">Instagram: @thecyberangeloftheinternet</div>
+        <div class="social-item">Discord: @thecyberangeloftheinternet</div>
+        <div class="social-item">Email: thecyberangeloftheinternet@outlook.com</div>
+        <div class="social-item">SMS: 717-324-2315</div>
+    </div>
+
+    <script>
+        // Wait for the typing animation to finish before displaying the socials
+        setTimeout(() => {
+            document.getElementById('socials').classList.add('fade-in');
+        }, 4000); // Adjust to match the typing animation duration
+    </script>
+
+</body>
+</html>
