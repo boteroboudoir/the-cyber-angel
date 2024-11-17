@@ -17,11 +17,11 @@
             overflow: hidden;
             padding: 20px; /* Added padding for smaller screens */
             box-sizing: border-box;
+            text-align: center; /* Center text for all screen sizes */
         }
 
         .portal {
             font-size: 3em;
-            text-align: center;
             opacity: 0;
             animation: fadeIn 3s forwards, fadeOut 1s forwards 5s;
         }
@@ -40,10 +40,11 @@
 
         .socials {
             display: none;
-            text-align: center;
             font-size: 1.5em;
             margin-top: 20px;
             animation: fadeIn 2s forwards 6s;
+            padding: 0 10px; /* Added padding to prevent text cut-off */
+            max-width: 100%; /* Ensure the text fits on smaller screens */
         }
 
         .glow {
@@ -57,7 +58,7 @@
             }
 
             .socials {
-                font-size: 1.3em; /* Slightly smaller font size for social links */
+                font-size: 1.4em; /* Slightly smaller font size for social links */
             }
         }
 
@@ -67,11 +68,12 @@
             }
 
             .portal {
-                font-size: 2em; /* Smaller font size for small screens */
+                font-size: 2.2em; /* Smaller font size for small screens */
             }
 
             .socials {
-                font-size: 1.2em; /* Even smaller font size for social links */
+                font-size: 1.3em; /* Even smaller font size for social links */
+                padding: 0 20px; /* Ensure proper text wrapping and prevent cut-off */
             }
         }
     </style>
@@ -79,11 +81,13 @@
 <body>
     <div class="portal glow" id="portalText"></div>
     <div class="socials" id="socialsList">
+        <p>x: @thecyberangel</p>
         <p>email: thecyberangeloftheinternet@outlook.com</p>
         <p>sms: 717-324-2315</p>
-        <p>x: @thecyberangel</p>
+        <p>instagram: @thecyberangeloftheinternet</p>
         <p>instagram: @thecyberangeloftheinternet</p>
         <p>discord: @thecyberangeloftheinternet</p>
+        <p>i look forward to working with you.</p>
     </div>
 
     <script>
