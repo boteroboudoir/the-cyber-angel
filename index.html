@@ -15,6 +15,8 @@
             color: #3fbcff;
             font-family: 'DejaVu Sans Mono', monospace;
             overflow: hidden;
+            padding: 20px; /* Added padding for smaller screens */
+            box-sizing: border-box;
         }
 
         .portal {
@@ -47,12 +49,36 @@
         .glow {
             text-shadow: 0 0 20px #3fbcff, 0 0 30px #3fbcff;
         }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .portal {
+                font-size: 2.5em; /* Adjust font size for medium screens */
+            }
+
+            .socials {
+                font-size: 1.3em; /* Slightly smaller font size for social links */
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                padding: 10px; /* Less padding for small screens */
+            }
+
+            .portal {
+                font-size: 2em; /* Smaller font size for small screens */
+            }
+
+            .socials {
+                font-size: 1.2em; /* Even smaller font size for social links */
+            }
+        }
     </style>
 </head>
 <body>
     <div class="portal glow" id="portalText"></div>
     <div class="socials" id="socialsList">
-
         <p>email: thecyberangeloftheinternet@outlook.com</p>
         <p>sms: 717-324-2315</p>
         <p>x: @thecyberangel</p>
